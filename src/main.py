@@ -11,8 +11,12 @@ import pandas as pd
 from datetime import datetime, timedelta
 
 # Import our modules
-from src.api.gemini_api import GeminiAPI
-from src.utils.helpers import (
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from api.gemini_api import GeminiAPI
+from utils.helpers import (
     calculate_growth_projection, 
     format_currency, 
     calculate_percentage_progress, 
@@ -20,10 +24,9 @@ from src.utils.helpers import (
     format_large_number,
     create_performance_dataframe,
     create_sentiment_dataframe,
-    validate_social_media_url,
     extract_hashtags
 )
-from src.templates.content_templates import (
+from templates.content_templates import (
     CONTENT_TEMPLATES,
     apply_template,
     get_all_template_types

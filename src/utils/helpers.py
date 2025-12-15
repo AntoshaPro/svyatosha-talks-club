@@ -41,23 +41,17 @@ def calculate_growth_projection(current_value: float, growth_rate: float, period
     return projections
 
 
-def validate_social_media_url(url: str) -> bool:
+def validate_url(url: str) -> bool:
     """
-    Validate if URL is a valid social media link
+    Validate if URL is a valid web URL (for open source research)
     """
-    social_patterns = [
-        r'tiktok\.com',
-        r'instagram\.com',
-        r'youtube\.com',
-        r'twitter\.com',
-        r'facebook\.com',
-        r'linkedin\.com',
-        r'pinterest\.com',
-        r'snapchat\.com'
-    ]
-    
-    url_lower = url.lower()
-    return any(re.search(pattern, url_lower) for pattern in social_patterns)
+    # Basic URL validation pattern
+    url_pattern = re.compile(
+        r'^https?://'  # http:// or https://
+        r'(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}'  # domain
+        r'(?:/[^\s]*)?$'  # optional path
+    )
+    return bool(url_pattern.match(url))
 
 
 def parse_niche_keywords(niche: str) -> List[str]:
