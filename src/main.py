@@ -161,18 +161,18 @@ elif st.session_state.current_tab == "viral":
     
     # Step 0: Personality Calibration
     st.subheader("0. 🧬 Personality Calibration")
-    social_links = st.text_area("Enter your social media links (one per line) to calibrate your digital DNA:", 
-                                placeholder="https://tiktok.com/@your_account\nhttps://instagram.com/your_account\nhttps://youtube.com/c/yourchannel")
+    content_sources = st.text_area("Enter links to your content sources (one per line) to calibrate your digital DNA:", 
+                                placeholder="https://yourwebsite.com\nhttps://yourblog.com\nhttps://yourpodcast.com")
     
     if st.button("Calibrate Digital DNA"):
         with st.spinner("Analyzing your quantum signature..."):
-            if social_links.strip():
-                response = gemini_api.analyze_personality(social_links)
+            if content_sources.strip():
+                response = gemini_api.analyze_personality(content_sources)
                 st.session_state.personality_profile = response
                 st.success("Digital DNA calibrated!")
                 st.write(response)
             else:
-                st.warning("Please enter your social media links first")
+                st.warning("Please enter your content source links first")
     
     # Step 0.5: Empathetic Resonance
     st.subheader("0.5 💖 Empathetic Resonance")
@@ -209,10 +209,10 @@ elif st.session_state.current_tab == "viral":
     
     with col2:
         competitor_urls = st.text_area("Competitor URLs (optional, for analysis):", 
-                                      placeholder="Paste competitor social media links here...")
+                                      placeholder="Paste competitor website links here...")
         
-        if st.button("Spy on Competitors"):
-            with st.spinner("Gathering competitive intelligence..."):
+        if st.button("Analyze Competitors"):
+            with st.spinner("Gathering competitive intelligence from open sources..."):
                 if competitor_urls.strip():
                     response = gemini_api.analyze_competitors(competitor_urls, niche)
                     st.success("Competitive analysis complete!")
@@ -233,9 +233,9 @@ elif st.session_state.current_tab == "viral":
     st.subheader("2. 🎨 Masterpiece Generator")
     
     content_format = st.selectbox("Choose content format:", 
-                                 ["TikTok Script", "Instagram Caption", "YouTube Hook", 
-                                  "Twitter Thread", "Blog Post Intro", "Podcast Topic", 
-                                  "Newsletter Content", "Video Idea", "AI Image Prompt", "Other"])
+                                 ["Blog Post", "Article", "Podcast Script", "Video Script", 
+                                  "Social Media Post", "Newsletter Content", "Email Sequence", 
+                                  "Webinar Outline", "AI Image Prompt", "Other"])
     
     content_topic = st.text_input("Content topic or idea:", 
                                  placeholder="E.g., How to release trapped energy, Quantum manifestation techniques...")
@@ -260,11 +260,17 @@ elif st.session_state.current_tab == "viral":
                 st.success("Masterpiece materialized! ✨")
                 
                 # Display the generated content with special formatting based on type
-                if content_format == "TikTok Script":
-                    st.subheader("🎬 TikTok Script:")
+                if content_format == "Blog Post":
+                    st.subheader("📝 Blog Post:")
+                    st.write(response)
+                elif content_format == "Podcast Script":
+                    st.subheader("🎙️ Podcast Script:")
                     st.code(response, language="text")
-                elif content_format == "Instagram Caption":
-                    st.subheader("📱 Instagram Caption:")
+                elif content_format == "Video Script":
+                    st.subheader("🎥 Video Script:")
+                    st.code(response, language="text")
+                elif content_format == "Social Media Post":
+                    st.subheader("📱 Social Media Post:")
                     st.write(response)
                     # Also suggest hashtags
                     from src.utils.helpers import extract_hashtags
@@ -335,7 +341,7 @@ elif st.session_state.current_tab == "insights":
     st.subheader("Content Performance Analytics")
     
     # Simulated content performance data
-    content_types = ['TikTok', 'Instagram', 'YouTube', 'Telegram', 'Newsletter']
+    content_types = ['Blog Posts', 'Videos', 'Podcasts', 'Emails', 'Webinars']
     engagement_rates = [8.5, 4.2, 6.1, 12.3, 3.7]  # Simulated engagement rates
     
     perf_data = create_performance_dataframe(content_types, engagement_rates)
