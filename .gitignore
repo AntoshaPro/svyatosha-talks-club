@@ -1,24 +1,47 @@
 ```
+# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.env
-.env.local
-.env.*
+.Python
+env/
 venv/
 .venv/
-.vscode/
-.idea/
-*.log
-*.tmp
-*.swp
-.DS_Store
-Thumbs.db
-dist/
+.venv-local/
+.egg-info/
+*.egg
+*.egg-info/
+
+# Build artifacts
 build/
+dist/
+*.so
+*.dylib
+*.dll
+
+# Testing
 .coverage
 htmlcov/
-.mypy_cache/
 .pytest_cache/
+.mypy_cache/
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
 ```
