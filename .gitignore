@@ -1,37 +1,24 @@
 ```
-# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
-env/
-venv/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-.DS_Store
-Thumbs.db
-
-# Environment
 .env
 .env.local
 .env.*
-
-# IDE
+venv/
+.venv/
 .vscode/
 .idea/
-
-# Build and distribution
-build/
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
 dist/
-*.egg-info/
+build/
+.coverage
+htmlcov/
+.mypy_cache/
+.pytest_cache/
 ```

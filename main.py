@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Svyatosha Talks Club - Voice conversation generation system
+SvyaTosha: Quantum Empire Builder - AI-powered command center for building and scaling digital empires of spiritual entrepreneurs
 """
 
 import sys
@@ -16,15 +16,15 @@ logger = logging.getLogger(__name__)
 
 def main():
     """Main entry point"""
-    logger.info("Starting Svyatosha Talks Club")
-    logger.info("Voice conversation platform initialized")
+    logger.info("Starting SvyaTosha: Quantum Empire Builder")
+    logger.info("AI-powered command center for spiritual entrepreneurs initialized")
     
     # TODO: Add voice cloning and TTS integration
     # TODO: Add dialogue generation
     # TODO: Add audio processing pipeline
     
-    print("\n✅ Svyatosha Talks Club is ready!")
-    print("Run dialogue generation with: python main.py --generate\n")
+    print("\n✨ SvyaTosha: Quantum Empire Builder is ready!")
+    print("Run the dashboard with: streamlit run src/main.py\n")
     return 0
 
 if __name__ == "__main__":

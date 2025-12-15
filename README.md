@@ -37,10 +37,35 @@ AI-powered command center for building and scaling digital empires of spiritual 
 
 ## Getting Started
 
+1. Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+2. Set up your environment:
+```bash
+# Create a .env file with your Google API key
+echo "GOOGLE_API_KEY=your_key_here" > .env
+```
+
+3. Run the application:
+```bash
 streamlit run src/main.py
 ```
+
+Or use the run script:
+```bash
+python run_app.py
+```
+
+## Usage
+
+The application provides four main tabs for different aspects of your digital empire building:
+
+- **Empire Dashboard**: Track goals and get AI-generated strategic advice
+- **Viral Workshop**: Create content, analyze trends, and find viral opportunities
+- **Money Flow**: Work through financial blocks and mindset issues
+- **Quantum Insights**: Analyze performance and find new opportunities
 
 ## License
 
