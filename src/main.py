@@ -20,7 +20,8 @@ from src.utils.helpers import (
     format_large_number,
     create_performance_dataframe,
     create_sentiment_dataframe,
-    validate_social_media_url
+    validate_social_media_url,
+    extract_hashtags
 )
 from src.templates.content_templates import (
     CONTENT_TEMPLATES,

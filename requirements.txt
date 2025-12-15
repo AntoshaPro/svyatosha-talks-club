@@ -14,8 +14,8 @@ requests>=2.25.0
 
 # Social Media APIs
 tweepy>=4.10.0
-instagram-private-api>=1.6.0
-tiktok-api-python>=1.0.0
+instagrapi>=2.0.0
+yt-dlp>=2023.0.0
 
 # Utilities
 python-dotenv>=0.19.0
